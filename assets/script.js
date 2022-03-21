@@ -56,6 +56,20 @@ setTimer();
 setQuestion();
 }
 
+var setTimer = function(){
+timerEl.style.display = "flex";
+timeLeft.textContent = timer;
+
+var myInterval = setInterval(function(){
+    if(timer === 0 || questionsFinished) {
+    clearInterval(myInterval);
+    } else {
+    timer--;
+    timeLeft.textContent = timer;
+    }
+}, 1000);
+}
+
 var setQuestion = function(){
 questionEl.textContent = questionsArray[questionNum].question;  
 for (let i = 0; i < 4; i++) {
@@ -94,7 +108,6 @@ if(questionNum < questionsArray.length){
 }
 
 }
-
 
 beginQuiz.addEventListener("click", startQuiz);
 choicesEl.addEventListener("click", isCorrect);
