@@ -28,8 +28,7 @@ var questionsArray = [
 var score = 0;
 var highscores = [];
 var questionNum = 0;
-// var timer = questionsArray.length * 10;
-var timer = 5;
+var timer = questionsArray.length * 10;
 var questionsFinished = false;
 
 var beginQuiz = document.getElementById("begin-quiz");
