@@ -179,6 +179,21 @@ localStorage.clear();
 showHighscores();
 }
 
+var resetQuiz = function(){
+mainMenu.style.display = 'block';
+quizMenu.style.display = 'none';
+highscoreMenu.style.display = 'none';
+userHighscore.style.display = 'block';
+allHighscores.style.display = 'none';
+highscoreList.innerHTML = '';
+
+score = 0;
+highscores = null;
+questionNum = 0;
+timer = questionsArray.length * 10;
+questionsFinished = false;
+}
+
 beginQuiz.addEventListener("click", startQuiz);
 choicesEl.addEventListener("click", isCorrect);
 initialsSubmit.addEventListener("click", highscoreHandler);
