@@ -5,8 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Code Quiz</h1>
+        <div>
+            <h4>View Highscores</h4>
+            <h3>Timer:</h3>
+        </div>
+        
+    </header>
+    <main>
+        <div class="content">
+            <section id="main-menu">
+                <h2>Answer the following questions within the time limit!</h2>
+                <button class="begin-quiz">Press to Begin</button>
+            </section>
+        </div>
+
+        <div class="content">                
+            <section id="quiz-content">
+                <h2 class="question">Question</h2>
+                <div>
+                    <ol class="answer-choices">
+                        <li>answer</li>
+                        <li>answer</li>
+                        <li>answer</li>
+                        <li>answer</li>
+                    </ol>
+                    <ul class="real-answer">
+                        <li>Correct!</li>
+                        <li>Correct!</li>
+                        <li>Correct!</li>
+                        <li>Correct!</li>
+                    </ul>
+                </div>
+            </section>            
+        </div>
+
+        <div class="content">
+            <section id="end-menu">
+                <h2>Your Score:</h2>
+                <div>
+                    <form id="highscore-form">
+                        <div class="form-group">
+
+                        </div>
+                        <div class="form-group">
+                            <button class="btn" id="save-highscore" type="submit">Submit</button>
+                        </div>
+                    </form>
+                    <button class="retake-quiz">Retake</button>
+                </div>
+            </section>
+        </div>
+
+        <div class="content">
+            <section id="highscore-menu">
+                <h2>Highscores</h2>
+                <ol class="highscore-list">
+
+                </ol>
+            </section>
+        </div>
+    </main>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
