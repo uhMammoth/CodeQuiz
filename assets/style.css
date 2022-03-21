@@ -1,0 +1,9 @@
+body {
+    background: grey;
+  }
+  
+  #quiz-menu, #quiz-timer, #highscore-menu, #highscore-all {
+    display: none;
+  }
+  
+  
