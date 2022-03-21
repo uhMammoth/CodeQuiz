@@ -109,6 +109,76 @@ if(questionNum < questionsArray.length){
 
 }
 
+var setupHighscore = function(){
+quizMenu.style.display = "none";
+timerEl.style.display = "none";
+highscoreMenu.style.display = "block";
+
+}
+
+var highscoreHandler = function (){
+//get user input
+var userInitials = {
+    initial: initialsForm.value,
+    score: score
+};
+initialsForm.value = null;
+//get local storage and add user score
+addHighscore(userInitials);
+//display highscores
+}
+
+var addHighscore = function(userI){
+//pulls local storage and adds/sorts user score to it
+highscores = JSON.parse(localStorage.getItem('highscores'));
+var tempArray = [];
+var userEntered = false;
+if (highscores == null){
+    //if no highscores previously add user as first to temp array which will be set equal to highscore array later
+    highscores = [];
+    tempArray.push(userI);
+}
+else {
+    //sort through scores highest to least putting user in appropriate position
+    for (let i = 0; i < highscores.length; i++) {
+    var splitStart = highscores.slice(0, i-1);
+    var splitEnd = highscores.slice(i, highscores.length);
+    if (userEntered){break;}
+    else if(userI.score >= highscores[i].score){
+        tempArray.push(userI);
+        tempArray.push.apply(tempArray, splitEnd);
+        userEntered = true;
+    }
+    else if(userI.score < highscores[i].score){
+        tempArray.push(highscores[i]);
+    }
+    }
+}
+highscores = tempArray;
+localStorage.setItem('highscores', JSON.stringify(highscores));
+showHighscores();
+}
+
+var showHighscores = function(){
+if (highscores.length == 0 ){
+    highscoreList.innerHTML = '<li>No highscores yet!</li>';
+} else {
+    for (let i = 0; i < highscores.length; i++) {
+    var createLi = document.createElement("li");
+    createLi.innerHTML = highscores[i].initial + " - " + highscores[i].score;
+    highscoreList.appendChild(createLi);
+    }
+}
+userHighscore.style.display = 'none';
+allHighscores.style.display = 'block'; 
+}
+
+var resetHighscore = function(){
+highscores = [];
+localStorage.clear();
+showHighscores();
+}
+
 beginQuiz.addEventListener("click", startQuiz);
 choicesEl.addEventListener("click", isCorrect);
 initialsSubmit.addEventListener("click", highscoreHandler);
