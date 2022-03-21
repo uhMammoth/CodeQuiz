@@ -1,28 +1,28 @@
 var questionsArray = [
     {
-      question: "what is 1+1?",
-      choices: ["1","2","3","4"],
-      answer: "2"
+      question: "What does CSS stand for?",
+      choices: [" Computer Style Sheets","Colorful Style Sheets","Cascading Style Sheets","Creative Style Sheets"],
+      answer: "Cascading Style Sheets"
     },
     {
-      question: "what is 1x1?",
-      choices: ["1","2","3","4"],
-      answer: "1"
+      question: "What is the correct HTML for referring to an external style sheet?",
+      choices: [" <style src='mystyle.css'>"," <stylesheet>mystyle.css</stylesheet>","<link rel='stylesheet' type='text/css' href='mystyle.css'>","All of the above"],
+      answer: "<link rel='stylesheet' type='text/css' href='mystyle.css'>"
     },
     {
-      question: "what is 1+2?",
-      choices: ["1","2","3","4"],
-      answer: "3"
+      question: "Where in an HTML document is the correct place to refer to an external style sheet?",
+      choices: ["in the <body> section","in the <head> section","At the end of the document","in the <title> section"],
+      answer: "in the <head> section"
     },
     {
-      question: "what is 1x4?",
-      choices: ["1","2","3","4"],
-      answer: "4"
+      question: "How do you insert a comment in a CSS file?",
+      choices: ["'this is a comment","//this is a comment","/* this is a comment */","// this is a comment //"],
+      answer: "/* this is a comment */"
     },
     {
-      question: "how many hours are in a day",
-      choices: ["365","24","60","at least 1"],
-      answer: "24"
+      question: "Which property is used to change the background color?",
+      choices: ["bgcolor","background-color","color","text-color"],
+      answer: "background-color"
     }
   ];
 var score = 0;
